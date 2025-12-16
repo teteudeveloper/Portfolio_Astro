@@ -1,19 +1,10 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
 ---
 
-<BaseLayout title="Matheus Ramalho - Portfolio">
-  <main class="min-h-screen flex items-center justify-center">
-    <div class="text-center">
-      <h1 class="text-5xl font-bold mb-4">
-        Matheus Ramalho
-      </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-400">
-        Full Stack Developer
-      </p>
-      <p class="mt-4 text-sm text-green-600 dark:text-green-400">
-        ✅ Astro + Tailwind configurados com sucesso!
-      </p>
-    </div>
-  </main>
-</BaseLayout>
+<Layout title="Matheus Ramalho">
+  <Navbar />
+  <Hero />
+</Layout>
