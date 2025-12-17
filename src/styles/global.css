@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+/* Forçar mudança de cores no dark mode */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+:root.dark body {
+  background-color: #000000;
+  color: #ffffff;
+}

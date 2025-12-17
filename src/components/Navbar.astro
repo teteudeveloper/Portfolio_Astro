@@ -5,21 +5,20 @@ import NavbarActions from "./NavbarActions.jsx";
 <div
   class="fixed top-0 left-0 right-0 z-50
   bg-bg-light/80 dark:bg-bg-dark/80
-  backdrop-blur
-  border-b border-gray-border dark:border-gray-dark-border">
+  backdrop-blur">
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="h-16 flex items-center justify-between">
 
-      <span class="font-semibold text-lg">
+      <span class="font-semibold text-lg text-text-light dark:text-text-dark">
         Matheus Ramalho
       </span>
 
-      <div class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#home" class="hover:opacity-70 transition">Home</a>
-        <a href="#about" class="hover:opacity-70 transition">About</a>
-        <a href="#projects" class="hover:opacity-70 transition">Projects</a>
-        <a href="#contact" class="hover:opacity-70 transition">Contact</a>
+      <div class="hidden md:flex items-center gap-6 text-sm text-text-light dark:text-text-dark">
+        <a href="#home" class="hover:opacity-70">Home</a>
+        <a href="#about" class="hover:opacity-70">About</a>
+        <a href="#projects" class="hover:opacity-70">Projects</a>
+        <a href="#contact" class="hover:opacity-70">Contact</a>
       </div>
 
       <NavbarActions client:load />

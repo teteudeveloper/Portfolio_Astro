@@ -21,10 +21,22 @@ const {
     <title>{title}</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <script is:inline>
+      // Script que roda ANTES de qualquer coisa renderizar
+      (function() {
+        const theme = localStorage.getItem("theme");
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
   </head>
 
   <body
-    class="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark transition-colors duration-300"
+    class="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark"
   >
     <slot />
   </body>
