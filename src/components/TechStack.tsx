@@ -62,7 +62,7 @@ const technologies: Technology[] = [
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
     url: 'https://spring.io/projects/spring-boot'
   },
-{
+  {
     name: 'PostgreSQL',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
     url: 'https://www.postgresql.org'
