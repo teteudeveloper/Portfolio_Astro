@@ -5,8 +5,7 @@ export default function NavbarActions() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    // Verifica tema salvo ao carregar
-    const storedTheme = localStorage.getItem("theme");
+   const storedTheme = localStorage.getItem("theme");
     const isDark = storedTheme === "dark" || document.documentElement.classList.contains("dark");
     
     if (isDark) {
@@ -17,7 +16,6 @@ export default function NavbarActions() {
       setDark(false);
     }
 
-    // Observa mudanças na classe 'dark' do HTML
     const observer = new MutationObserver(() => {
       const htmlElement = document.documentElement;
       const hasDarkClass = htmlElement.classList.contains("dark");
