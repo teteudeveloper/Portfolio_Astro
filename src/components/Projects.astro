@@ -1,0 +1,80 @@
+---
+import ProjectCard from './ProjectCard';
+
+const projects = [
+  {
+    id: 'hungrify',
+    title: 'Hungrify',
+    description:
+      'Web application for managing restaurant orders and menus. Users can explore restaurants, view products, and place orders efficiently.',
+    image: '',
+    github: 'https://github.com/teteudeveloper/Hungrify',
+    technologies: [
+      { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+      { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+      { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+      { name: 'Prisma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg' },
+      { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+      { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
+    ]
+  },
+  {
+    id: 'trimfy',
+    title: 'Trimfy',
+    description:
+      'Barbershop appointment scheduling system. Users can find barbershops, view services, and book appointments seamlessly.',
+    image: '',
+    github: 'https://github.com/teteudeveloper/Trimfy',
+    technologies: [
+      { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+      { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+      { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+      { name: 'Prisma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg' },
+      { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+      { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
+    ]
+  },
+  {
+    id: 'sge',
+    title: 'SGE - Stock Management System',
+    description:
+      'Complete inventory management solution for small and medium businesses. Manages products, sales, users, and financial data in one place.',
+    image: '',
+    github: 'https://github.com/teteudeveloper/SGE',
+    technologies: [
+      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+      { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+      { name: 'Spring Boot', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
+      { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+      { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
+    ]
+  }
+];
+---
+
+<section
+  id="projects"
+  class="min-h-screen pt-16 bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark"
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl lg:text-6xl font-bold mb-6">
+          Featured Projects
+        </h2>
+        <p class="text-lg sm:text-xl opacity-80 max-w-2xl mx-auto">
+          A collection of projects showcasing my skills in full-stack development,
+          from concept to deployment.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        {projects.map((project) => (
+          <ProjectCard project={project} client:load />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
