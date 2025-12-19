@@ -1,0 +1,33 @@
+<footer class="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex justify-between items-center">
+      
+      <p class="text-sm opacity-70">
+        © {new Date().getFullYear()} - All rights reserved.
+      </p>
+
+      <button 
+        id="back-to-top"
+        class="w-10 h-10 flex items-center justify-center rounded-full border border-text-light dark:border-text-dark hover:bg-text-light hover:text-bg-light dark:hover:bg-text-dark dark:hover:text-bg-dark transition-all"
+        aria-label="Back to top"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+      </button>
+
+    </div>
+  </div>
+</footer>
+
+<script>
+  const backToTopButton = document.getElementById('back-to-top');
+  if (backToTopButton) {
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+</script>
