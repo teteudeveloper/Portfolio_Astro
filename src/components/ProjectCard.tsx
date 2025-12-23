@@ -48,16 +48,22 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           }`
         }}
       >
-        <div className="relative w-full h-56 overflow-hidden">
+        <div className="w-full">
           {!imageError ? (
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="
+                w-full
+                h-auto
+                block
+                transition-transform duration-300
+                group-hover:scale-[1.02]
+              "
               onError={() => setImageError(true)}
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
+            <div className="w-full aspect-video flex items-center justify-center bg-gray-200 dark:bg-gray-700">
               <svg
                 className="w-16 h-16 text-gray-400"
                 fill="none"
@@ -75,7 +81,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           )}
         </div>
 
-        <div className="p-6 flex flex-col h-full">
+        <div className="p-6 flex flex-col">
           <h3 className="text-2xl font-bold mb-3">
             {project.title}
           </h3>
