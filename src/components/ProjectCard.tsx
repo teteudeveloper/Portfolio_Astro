@@ -13,6 +13,7 @@ interface Project {
   image: string;
   github: string;
   technologies: Technology[];
+  imagePosition?: string; 
 }
 
 interface ProjectCardProps {
@@ -48,22 +49,26 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           }`
         }}
       >
-        <div className="w-full">
+        <div className="w-full h-[220px] overflow-hidden">
           {!imageError ? (
             <img
               src={project.image}
               alt={project.title}
               className="
                 w-full
-                h-auto
+                h-full
+                object-cover
                 block
                 transition-transform duration-300
                 group-hover:scale-[1.02]
               "
+              style={{
+                objectPosition: project.imagePosition ?? 'center'
+              }}
               onError={() => setImageError(true)}
             />
           ) : (
-            <div className="w-full aspect-video flex items-center justify-center bg-gray-200 dark:bg-gray-700">
+            <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
               <svg
                 className="w-16 h-16 text-gray-400"
                 fill="none"
