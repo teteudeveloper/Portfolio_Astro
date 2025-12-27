@@ -10,22 +10,39 @@ export default function ContactForm() {
   });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
+  const FORMSPREE_ENDPOINT = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
 
-    // integrar funcionalidade do serviço de email aqui 
-    setTimeout(() => {
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) {
+        throw new Error('Formspree error');
+      }
+
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
-      
+
       setTimeout(() => {
         setStatus('idle');
       }, 3000);
-    }, 1000);
+    } catch {
+      setStatus('error');
+    }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -106,7 +123,11 @@ export default function ContactForm() {
           color: isDark ? '#000000' : '#ffffff'
         }}
       >
-        {status === 'sending' ? 'Sending...' : status === 'success' ? 'Sent Successfully!' : 'Send Message'}
+        {status === 'sending'
+          ? 'Sending...'
+          : status === 'success'
+          ? 'Sent Successfully!'
+          : 'Send Message'}
       </button>
 
       {status === 'success' && (
