@@ -1,0 +1,66 @@
+{
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "Olá, meu nome é",
+    "name": "Matheus",
+    "description": "Sou um desenvolvedor full-stack e trabalho na construção de aplicações web modernas, com foco em arquitetura, organização e soluções bem estruturadas.",
+    "cta": "Entre em contato"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "skillsTitle": "Minhas Habilidades",
+    "paragraph1": "Trabalho como desenvolvedor full-stack focado em projetar e desenvolver soluções digitais completas, escaláveis, confiáveis e bem estruturadas. Minha experiência abrange todo o processo de desenvolvimento, permitindo-me transformar ideias em aplicações web funcionais e eficientes. No front-end, construo interfaces que combinam performance, usabilidade e consistência visual, sempre priorizando uma experiência de usuário limpa e design atencioso.",
+    "paragraph2": "No back-end, desenvolvo APIs e sistemas robustos com atenção à arquitetura, integridade de dados e manutenibilidade a longo prazo. Contribuo ativamente para a evolução do produto otimizando fluxos de trabalho, melhorando a qualidade do sistema e garantindo consistência técnica em cada etapa do desenvolvimento. Também tenho forte interesse em segurança de aplicações, seguindo as melhores práticas relacionadas à autenticação, controle de acesso, proteção de APIs e design seguro de sistemas.",
+    "cta": "Mais informações"
+  },
+  "projects": {
+    "title": "Projetos em Destaque",
+    "description": "Uma coleção de projetos que demonstram minhas habilidades em desenvolvimento full-stack, do conceito ao deploy.",
+    "projectsList": {
+      "simpleCRM": {
+        "title": "SimpleCRM",
+        "description": "SimpleCRM é um sistema leve de gerenciamento de relacionamento com clientes projetado para freelancers e pequenas empresas de serviços. Ele se concentra em simplicidade, clareza e produtividade, permitindo aos usuários rastrear clientes, interações e status do cliente sem a complexidade dos CRMs tradicionais."
+      },
+      "orderFlow": {
+        "title": "OrderFlow",
+        "description": "OrderFlow é uma API REST orientada para produção, projetada para gerenciar clientes e pedidos em ambientes B2B. Enfatiza arquitetura limpa, regras de negócio explícitas e manutenibilidade, permitindo que as equipes construam sistemas backend escaláveis com limites de domínio claros e persistência confiável."
+      },
+      "sge": {
+        "title": "SGE - Sistema de Gestão de Estoque",
+        "description": "Solução completa de gerenciamento de inventário para pequenas e médias empresas. Gerencia produtos, vendas, usuários e dados financeiros em um único lugar."
+      }
+    },
+    "technologiesUsed": "Tecnologias Utilizadas"
+  },
+  "contact": {
+    "title": "Entre em contato",
+    "description": "Você tem um projeto em mente ou quer saber mais sobre como posso ajudar? Sinta-se à vontade para me enviar uma mensagem ou se conectar através das minhas redes sociais.",
+    "form": {
+      "nameLabel": "Nome",
+      "emailLabel": "E-mail",
+      "messageLabel": "Mensagem",
+      "namePlaceholder": "Seu nome",
+      "emailPlaceholder": "seu.email@exemplo.com",
+      "messagePlaceholder": "Conte-me sobre seu projeto ou apenas diga oi...",
+      "submit": "Enviar Mensagem",
+      "sending": "Enviando...",
+      "success": "Enviado com Sucesso!",
+      "successMessage": "Obrigado por entrar em contato! Logo entrarei em contato.",
+      "errorMessage": "Algo deu errado. Tente novamente ou envie-me um e-mail diretamente."
+    }
+  },
+  "footer": {
+    "copyright": "Todos os direitos reservados."
+  },
+  "mobile": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "contact": "Contato"
+  }
+}
