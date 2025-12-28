@@ -1,14 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDarkMode } from '../hooks/useDarkMode';
+import { dictionaries } from '../i18n';
+
+type Status = 'idle' | 'sending' | 'success' | 'error';
 
 export default function ContactForm() {
   const { isDark } = useDarkMode();
+
+  const [locale, setLocale] = useState<'pt' | 'en'>('en');
+  const [status, setStatus] = useState<Status>('idle');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  useEffect(() => {
+    const storedLocale = localStorage.getItem('locale');
+    if (storedLocale === 'pt' || storedLocale === 'en') {
+      setLocale(storedLocale);
+    }
+  }, []);
+
+  const t = dictionaries[locale].contact.form;
 
   const FORMSPREE_ENDPOINT = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
 
@@ -53,7 +68,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
         <label htmlFor="name" className="block text-sm font-medium mb-2">
-          Name
+          {t.nameLabel}
         </label>
         <input
           type="text"
@@ -68,13 +83,13 @@ export default function ContactForm() {
             borderColor: isDark ? 'rgba(75, 85, 99, 1)' : 'rgba(229, 231, 235, 1)',
             color: isDark ? '#ffffff' : '#000000'
           }}
-          placeholder="Your name"
+          placeholder={t.namePlaceholder}
         />
       </div>
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium mb-2">
-          Email
+          {t.emailLabel}
         </label>
         <input
           type="email"
@@ -89,13 +104,13 @@ export default function ContactForm() {
             borderColor: isDark ? 'rgba(75, 85, 99, 1)' : 'rgba(229, 231, 235, 1)',
             color: isDark ? '#ffffff' : '#000000'
           }}
-          placeholder="your.email@example.com"
+          placeholder={t.emailPlaceholder}
         />
       </div>
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium mb-2">
-          Message
+          {t.messageLabel}
         </label>
         <textarea
           id="message"
@@ -110,7 +125,7 @@ export default function ContactForm() {
             borderColor: isDark ? 'rgba(75, 85, 99, 1)' : 'rgba(229, 231, 235, 1)',
             color: isDark ? '#ffffff' : '#000000'
           }}
-          placeholder="Tell me about your project or just say hi..."
+          placeholder={t.messagePlaceholder}
         />
       </div>
 
@@ -124,21 +139,21 @@ export default function ContactForm() {
         }}
       >
         {status === 'sending'
-          ? 'Sending...'
+          ? t.sending
           : status === 'success'
-          ? 'Sent Successfully!'
-          : 'Send Message'}
+          ? t.success
+          : t.submit}
       </button>
 
       {status === 'success' && (
         <div className="p-4 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-sm">
-          Thanks for reaching out! I'll get back to you soon.
+          {t.successMessage}
         </div>
       )}
 
       {status === 'error' && (
         <div className="p-4 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200 text-sm">
-          Something went wrong. Please try again or email me directly.
+          {t.errorMessage}
         </div>
       )}
     </form>
