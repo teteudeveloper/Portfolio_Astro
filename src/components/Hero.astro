@@ -1,16 +1,28 @@
-<section id="home" class="min-h-screen flex items-center pt-16 bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark">
+---
+import { dictionaries } from "../i18n";
+
+const locale =
+  Astro.cookies.get("locale")?.value === "pt" ? "pt" : "en";
+
+const t = dictionaries[locale];
+---
+
+<section
+  id="home"
+  class="min-h-screen flex items-center pt-16 bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark"
+>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto lg:mx-0 text-center lg:text-left">
       <p class="text-lg sm:text-xl mb-4 opacity-70">
-        Hello, my name is
+        {t.hero.greeting}
       </p>
 
       <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
-        Matheus
+        {t.hero.name}
       </h1>
 
       <p class="text-lg sm:text-xl opacity-80 max-w-2xl mx-auto lg:mx-0 mb-10">
-        I am a full-stack developer and I work on building modern web applications, focusing on architecture, organization, and well structured solutions.
+        {t.hero.description}
       </p>
 
       <div class="flex items-center justify-center lg:justify-start gap-4 mb-10">
@@ -57,7 +69,7 @@
           id="cta-button"
           class="inline-flex items-center justify-center px-12 py-4 rounded-xl font-medium shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
         >
-          Get in touch
+          {t.hero.cta}
         </a>
       </div>
 
