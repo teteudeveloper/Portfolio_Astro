@@ -1,24 +1,37 @@
 ---
 import NavbarActions from "./NavbarActions.jsx";
+import { dictionaries } from "../i18n";
+
+const locale =
+  Astro.cookies.get("locale")?.value === "pt" ? "pt" : "en";
+
+const t = dictionaries[locale];
 ---
 
 <div
   class="fixed top-0 left-0 right-0 z-50
   bg-bg-light/80 dark:bg-bg-dark/80
-  backdrop-blur">
-
+  backdrop-blur"
+>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="h-16 flex items-center justify-between">
-
       <span class="font-semibold text-lg text-text-light dark:text-text-dark">
         Matheus Ramalho
       </span>
 
       <div class="hidden md:flex items-center gap-6 text-sm text-text-light dark:text-text-dark">
-        <a href="#home" class="hover:opacity-70">Home</a>
-        <a href="#about" class="hover:opacity-70">About</a>
-        <a href="#projects" class="hover:opacity-70">Projects</a>
-        <a href="#contact" class="hover:opacity-70">Contact</a>
+        <a href="#home" class="hover:opacity-70">
+          {t.navbar.home}
+        </a>
+        <a href="#about" class="hover:opacity-70">
+          {t.navbar.about}
+        </a>
+        <a href="#projects" class="hover:opacity-70">
+          {t.navbar.projects}
+        </a>
+        <a href="#contact" class="hover:opacity-70">
+          {t.navbar.contact}
+        </a>
       </div>
 
       <NavbarActions client:load />
