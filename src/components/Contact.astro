@@ -1,14 +1,23 @@
 ---
 import ContactForm from './ContactForm';
+import { dictionaries } from "../i18n";
+
+const locale =
+  Astro.cookies.get("locale")?.value === "pt" ? "pt" : "en";
+
+const t = dictionaries[locale];
 ---
 
-<section id="contact" class="min-h-screen flex items-center pt-16 bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark">
+<section
+  id="contact"
+  class="min-h-screen flex items-center pt-16 bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark"
+>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="max-w-5xl mx-auto">
       
       <div class="text-center mb-16">
         <h2 class="text-5xl lg:text-6xl font-bold mb-6">
-          Get in touch
+          {t.contact.title}
         </h2>
       </div>
 
@@ -16,7 +25,7 @@ import ContactForm from './ContactForm';
         
         <div class="space-y-8">
           <p class="text-lg leading-relaxed opacity-80">
-            Do you have a project in mind or want to learn more about how I can help? Feel free to send me a message or connect through my social media.
+            {t.contact.description}
           </p>
 
           <div class="space-y-4">
@@ -42,6 +51,7 @@ import ContactForm from './ContactForm';
               </svg>
               <span>teteudeveloper@gmail.com</span>
             </a>
+
             <a 
               href="https://instagram.com/teteudev"
               target="_blank"
