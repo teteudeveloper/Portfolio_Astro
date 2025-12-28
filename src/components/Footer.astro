@@ -1,9 +1,18 @@
+---
+import { dictionaries } from "../i18n";
+
+const locale =
+  Astro.cookies.get("locale")?.value === "pt" ? "pt" : "en";
+
+const t = dictionaries[locale];
+---
+
 <footer class="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="flex justify-between items-center">
       
       <p class="text-sm opacity-70">
-        © {new Date().getFullYear()} - All rights reserved.
+        © {new Date().getFullYear()} - {t.footer.copyright}
       </p>
 
       <button 
