@@ -1,34 +1,49 @@
 import { useEffect, useState } from "react";
+import { dictionaries } from "../i18n";
 
 export default function NavbarActions() {
   const [open, setOpen] = useState(null);
   const [dark, setDark] = useState(false);
+  const [locale, setLocale] = useState("en");
 
   useEffect(() => {
-   const storedTheme = localStorage.getItem("theme");
-    const isDark = storedTheme === "dark" || document.documentElement.classList.contains("dark");
-    
+    const storedTheme = localStorage.getItem("theme");
+    const isDark =
+      storedTheme === "dark" ||
+      document.documentElement.classList.contains("dark");
+
     if (isDark) {
       document.documentElement.classList.add("dark");
       setDark(true);
-    } else {
+    } else { 
       document.documentElement.classList.remove("dark");
       setDark(false);
     }
 
     const observer = new MutationObserver(() => {
-      const htmlElement = document.documentElement;
-      const hasDarkClass = htmlElement.classList.contains("dark");
-      setDark(hasDarkClass);
+      const hasDark = document.documentElement.classList.contains("dark");
+      setDark(hasDark);
     });
 
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ["class"]
+      attributeFilter: ["class"],
     });
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const storedLocale = localStorage.getItem("locale");
+    if (storedLocale === "pt" || storedLocale === "en") {
+      setLocale(storedLocale);
+    } else {
+      localStorage.setItem("locale", "en");
+      setLocale("en");
+    }
+  }, []);
+
+  const t = dictionaries[locale];
 
   function toggle(type) {
     setOpen((prev) => (prev === type ? null : type));
@@ -52,6 +67,21 @@ export default function NavbarActions() {
     }
   }
 
+  function changeLanguage(newLocale) {
+    if (newLocale === locale) {
+      closeAll();
+      return;
+    }
+
+    localStorage.setItem("locale", newLocale);
+    document.cookie = `locale=${newLocale}; path=/; SameSite=Lax`;
+
+    setLocale(newLocale);
+    closeAll();
+
+    window.location.reload();
+  }
+
   return (
     <>
       <div className="flex items-center gap-3 sm:gap-4">
@@ -64,7 +94,12 @@ export default function NavbarActions() {
           title={dark ? "Switch to light mode" : "Switch to dark mode"}
         >
           {!dark ? (
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -73,7 +108,12 @@ export default function NavbarActions() {
               />
             </svg>
           ) : (
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -114,7 +154,7 @@ export default function NavbarActions() {
           shadow-lg overflow-hidden"
         >
           <button
-            onClick={closeAll}
+            onClick={() => changeLanguage("en")}
             className="w-full flex items-center gap-2 px-3 py-2 text-sm
             hover:bg-black/5 dark:hover:bg-white/5"
             type="button"
@@ -123,7 +163,7 @@ export default function NavbarActions() {
           </button>
 
           <button
-            onClick={closeAll}
+            onClick={() => changeLanguage("pt")}
             className="w-full flex items-center gap-2 px-3 py-2 text-sm
             hover:bg-black/5 dark:hover:bg-white/5"
             type="button"
@@ -141,10 +181,18 @@ export default function NavbarActions() {
           border border-gray-border dark:border-gray-dark-border
           shadow-lg p-4 text-sm flex flex-col space-y-4"
         >
-          <a href="#home" onClick={closeAll}>Home</a>
-          <a href="#about" onClick={closeAll}>About</a>
-          <a href="#projects" onClick={closeAll}>Projects</a>
-          <a href="#contact" onClick={closeAll}>Contact</a>
+          <a href="#home" onClick={closeAll}>
+            {t.navbar.home}
+          </a>
+          <a href="#about" onClick={closeAll}>
+            {t.navbar.about}
+          </a>
+          <a href="#projects" onClick={closeAll}>
+            {t.navbar.projects}
+          </a>
+          <a href="#contact" onClick={closeAll}>
+            {t.navbar.contact}
+          </a>
         </div>
       )}
     </>
