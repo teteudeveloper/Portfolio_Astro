@@ -30,9 +30,9 @@
         "title": "OrderFlow",
         "description": "OrderFlow é uma API REST orientada para produção, projetada para gerenciar clientes e pedidos em ambientes B2B. Enfatiza arquitetura limpa, regras de negócio explícitas e manutenibilidade, permitindo que as equipes construam sistemas backend escaláveis com limites de domínio claros e persistência confiável."
       },
-      "sge": {
-        "title": "SGE - Sistema de Gestão de Estoque",
-        "description": "Solução completa de gerenciamento de inventário para pequenas e médias empresas. Gerencia produtos, vendas, usuários e dados financeiros em um único lugar."
+      "saldofy": {
+        "title": "Saldofy",
+        "description": "Saldofy é uma aplicação web desenvolvida para auxiliar os usuários no controle de suas finanças pessoais. Com uma interface intuitiva e funcionalidades práticas, o Saldofy permite que os usuários registrem suas receitas e despesas, categorizem transações e visualizem relatórios financeiros detalhados para melhor gerenciamento do orçamento."
       }
     },
     "technologiesUsed": "Tecnologias Utilizadas"

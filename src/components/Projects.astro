@@ -20,8 +20,8 @@ type Project = {
 const projects: Project[] = [
   {
     id: 'simpleCRM',
-    image: 'https://media.discordapp.net/attachments/1451272925402497075/1453061980557545572/Screenshot_From_2025-12-23_13-25-05.png?ex=694c14ec&is=694ac36c&hm=0c30d0b83011ebbd414fe0ea70348135328c29bf3ad3529399ffd04dc0e7983f&=&format=webp&quality=lossless&width=1798&height=828',
-    imagePosition: 'center 15%',
+    image: '',
+    imagePosition: 'center 8%',
     github: 'https://github.com/teteudeveloper/SimpleCRM',
     technologies: [
       { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
@@ -35,7 +35,7 @@ const projects: Project[] = [
   },
   {
     id: 'orderFlow',
-    image: 'https://media.discordapp.net/attachments/1451273480879341692/1453438438165450905/image.png?ex=694d7387&is=694c2207&hm=23d7058083683fe7c92b0696a79f78db9b23bc99ff178283c83519370ed34d84&=&format=webp&quality=lossless&width=1214&height=663',
+    image: '',
     imagePosition: 'center 8%',
     github: 'https://github.com/teteudeveloper/orderflow-api',
     technologies: [
@@ -46,18 +46,20 @@ const projects: Project[] = [
       { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
     ]
   },
-  {
-    id: 'sge',
+    {
+    id: 'saldofy',
     image: '',
-    github: 'https://github.com/teteudeveloper/SGE',
+    imagePosition: 'center 8%',
+    github: 'https://github.com/teteudeveloper/Saldofy',
     technologies: [
-      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-      { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-      { name: 'Spring Boot', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
+      { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+      { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+      { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+      { name: 'Prisma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg' },
       { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
       { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
     ]
-  }
+  },
 ];
 
 const translatedProjects = projects.map((project) => ({
