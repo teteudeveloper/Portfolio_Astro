@@ -22,17 +22,25 @@
     "title": "Projetos em Destaque",
     "description": "Uma coleção de projetos que demonstram minhas habilidades em desenvolvimento full-stack, do conceito ao deploy.",
     "projectsList": {
+      "beautyFlowApi": {
+        "title": "BeautyFlow API",
+        "description": "BeautyFlow API é uma API REST para salões de beleza com módulos de clientes, serviços, agenda e autenticação por perfis. O projeto aplica validações robustas, organização por domínio e padrões de backend focados em estabilidade, segurança e crescimento sustentável para operações reais de atendimento contínuo."
+      },
+      "snap2pdf": {
+        "title": "Snap2PDF",
+        "description": "Snap2PDF é uma aplicação web para converter imagens em PDF com fluxo direto de upload, ordenação e exportação em segundos. O projeto: prioriza rapidez operacional, interface limpa e geração consistente de documentos para uso diário, atendendo cenários de estudo, trabalho e compartilhamento com poucos cliques."
+      },
       "simpleCRM": {
         "title": "SimpleCRM",
-        "description": "SimpleCRM é um sistema leve de gerenciamento de relacionamento com clientes projetado para freelancers e pequenas empresas de serviços. Ele se concentra em simplicidade, clareza e produtividade, permitindo aos usuários rastrear clientes, interações e status do cliente sem a complexidade dos CRMs tradicionais."
+        "description": "SimpleCRM é uma plataforma para freelancers e equipes pequenas organizarem clientes e contatos, tarefas e etapas do funil em um único painel. O projeto combina interface objetiva com regras de negócio claras, histórico de interações e estrutura escalável para evoluir sem perder desempenho ou manutenibilidade."
       },
       "orderFlow": {
-        "title": "OrderFlow",
-        "description": "OrderFlow é uma API REST orientada para produção, projetada para gerenciar clientes e pedidos em ambientes B2B. Enfatiza arquitetura limpa, regras de negócio explícitas e manutenibilidade, permitindo que as equipes construam sistemas backend escaláveis com limites de domínio claros e persistência confiável."
+        "title": "OrderFlow API",
+        "description": "OrderFlow API é um backend B2B para gestão de clientes e pedidos com regras de negócio explícitas, persistência confiável e arquitetura limpa. A solução: organiza domínio, aplicação e infraestrutura para facilitar manutenção, integração com outros sistemas e evolução segura em ambientes de produção exigentes."
       },
       "saldofy": {
         "title": "Saldofy",
-        "description": "Saldofy é uma aplicação web desenvolvida para auxiliar os usuários no controle de suas finanças pessoais. Com uma interface intuitiva e funcionalidades práticas, o Saldofy permite que os usuários registrem suas receitas e despesas, categorizem transações e visualizem relatórios financeiros detalhados para melhor gerenciamento do orçamento."
+        "description": "Saldofy é uma aplicação financeira para registrar receitas, despesas, metas e categorias em fluxos pessoais e empresariais. O sistema: oferece visão do caixa, relatórios periódicos e acompanhamento de indicadores para apoiar decisões rápidas, com navegação intuitiva e base preparada para crescimento contínuo."
       }
     },
     "technologiesUsed": "Tecnologias Utilizadas"

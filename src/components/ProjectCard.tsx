@@ -91,11 +91,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.title}
           </h3>
 
-          <p className="text-sm opacity-75 mb-4 leading-relaxed">
+          <p className="text-sm opacity-75 mb-2 leading-relaxed">
             {project.description}
           </p>
 
-          <div className="mb-10">
+          <div className="mb-7">
             <p className="text-xs font-semibold uppercase tracking-wide opacity-60 mb-2">
               Technologies Used
             </p>

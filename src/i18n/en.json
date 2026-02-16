@@ -22,17 +22,29 @@
     "title": "Featured Projects",
     "description": "A collection of projects showcasing my skills in full-stack development, from concept to deployment.",
     "projectsList": {
+      "beautyFlowApi": {
+        "title": "BeautyFlow API",
+        "description": "BeautyFlow API is a REST API for beauty salons with modules for clients, services, scheduling, and role-based authentication. The project: applies strong validations, domain-oriented organization, and backend patterns focused on stability, security, and sustainable growth for real service operations at scale."
+      },
+      "snap2pdf": {
+        "title": "Snap2PDF",
+        "description": "Snap2PDF is a web application focused on converting images into PDF files through a direct upload, ordering, and export flow. The project prioritizes speed, a clean interface, and consistent document generation for daily use cases, serving study, work and sharing routines with minimal friction across devices."
+      },
+      "asyncTaskManager": {
+        "title": "Asynctask Manager",
+        "description": "Asynctask Manager is a system for asynchronous job processing with queues, workers, retries and monitoring. The architecture is designed for high concurrency, fault tolerance, and predictable execution, enabling teams to run background workflows safely and scale processing capacity in production environments."
+      },
       "simpleCRM": {
         "title": "SimpleCRM",
-        "description": "SimpleCRM is a lightweight customer relationship management system designed for freelancers and small service-based businesses. It focuses on simplicity, clarity, and productivity, allowing users to track clients, interactions, and customer status without the complexity of traditional CRMs."
+        "description": "SimpleCRM is a platform for freelancers and teams to manage clients, contacts, tasks, and pipeline stages in one workspace. The project: combines an objective interface with clear business rules, complete interaction history, and a scalable structure that evolves without losing performance or maintainability."
       },
       "orderFlow": {
         "title": "OrderFlow",
-        "description": "OrderFlow is a production-oriented REST API designed for managing customers and orders in B2B environments. It emphasizes clean architecture, explicit business rules, and maintainability, enabling teams to build scalable backend systems with clear domain boundaries and reliable persistence."
+        "description": "OrderFlow API is a B2B backend for customer and order management with explicit business rules, reliable persistence, and layered architecture. The solution separates domain, application, and infrastructure concerns to improve maintainability, integration with external systems and safe evolution in production."
       },      
       "saldofy": {
         "title": "Saldofy",
-        "description": "Saldofy is a web application developed to help users manage their personal finances. With an intuitive interface and practical features, Saldofy allows users to record their income and expenses, categorize transactions, and view detailed financial reports for better budget management."
+        "description": "Saldofy is a web application for tracking income, expenses, goals, and categories across personal and business flows. The system delivers consolidated cash visibility, periodic reports and indicators to support faster decisions, with intuitive navigation and a foundation built for long-term product evolution."
       }
     },
     "technologiesUsed": "Technologies Used"
